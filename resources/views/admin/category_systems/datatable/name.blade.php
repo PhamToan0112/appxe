@@ -1,0 +1,1 @@
+<x-link :href="route('admin.category_system.edit', $id)" :title="$name" />

@@ -1,0 +1,1 @@
+{{ number_format($fee, 0, ',', '.') . ' VND'}}

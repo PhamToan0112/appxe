@@ -1,0 +1,1 @@
+<x-link :href="route('admin.VehicleLine.edit', $id)" :title="$name" />

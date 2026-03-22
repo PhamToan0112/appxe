@@ -1,0 +1,30 @@
+<div class="col-12 col-md-3">
+    <div class="card mb-3">
+        <div class="card-header gap-1">
+            <i class="ti ti-settings"></i>
+            @lang('action')
+        </div>
+        <div class="card-body p-2 d-flex justify-content-between">
+            <div class="d-flex align-items-center h-100 gap-2">
+                <x-button.submit :title="__('save')" name="submitter" value="save" />
+                <x-link :href="route('admin.holiday.index')" class="btn btn-outline w-50">
+                    @lang('Quay lại')
+                </x-link>
+            </div>
+            <x-button.modal-delete data-route="{{ route('admin.holiday.delete', $holiday->id) }}" :title="__('delete')" />
+        </div>
+    </div>
+    <div class="card mb-3">
+        <div class="card-header gap-1">
+            <i class="ti ti-settings-cancel"></i>
+            @lang('status')
+        </div>
+        <div class="card-body p-2">
+            <x-select name="status" :required="true">
+                @foreach ($status as $key => $value)
+                    <x-select-option :value="$key" :title="$value" :selected="$holiday->status->value == $key" />
+                @endforeach
+            </x-select>
+        </div>
+    </div>
+</div>
